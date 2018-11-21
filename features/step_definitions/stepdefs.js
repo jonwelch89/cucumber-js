@@ -1,3 +1,6 @@
+
+//https://www.seleniumhq.org/docs/03_webdriver.jsp
+
 const assert = require('assert');
 var expect = require('chai').expect;
 const { Given, When, Then } = require('cucumber');
@@ -24,7 +27,7 @@ When('I search for {string}', function (word) {
 
 Then('I should be taken to the cats search results page', function () {
 
-	var title = driver.findElement(webdriver.By.className("page_title search_title"));
+	var title = driver.findElement(webdriver.By.css("#results > h1"));
 	expect(title.getText()).to.be.equal('YOU SEARCHED FOR "CAT"');
 	
         
